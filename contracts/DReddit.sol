@@ -58,5 +58,11 @@ contract DReddit {
     post.voters[msg.sender] = ballot;
     emit NewVote(_postId, msg.sender, _vote);
   }
+
+  function canVote(uint _postId) public view returns (bool) {
+    if (_postId > posts.length - 1) return false;
+    Post storage post = posts[_postId];
+    return (post.voters[msg.sender] == Ballot.NONE);
+  }
 }
 
