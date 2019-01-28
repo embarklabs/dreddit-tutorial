@@ -64,5 +64,10 @@ contract DReddit {
     Post storage post = posts[_postId];
     return (post.voters[msg.sender] == Ballot.NONE);
   }
+
+  function getVote(uint _postId) public view returns (uint8) {
+    Post storage post = posts[_postId];
+    return uint8(post.voters[msg.sender]);
+  }
 }
 
