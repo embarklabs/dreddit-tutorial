@@ -30,4 +30,14 @@ contract('DReddit', () => {
     assert.equal(web3.utils.toAscii(post.description), ipfsHash);
     assert.equal(post.owner, accounts[0]);
   });
+
+  it("should not be able to vote in an unexisting post", async () => {
+    const userCanVote = await DReddit.methods.canVote("123").call();
+    assert.equal(userCanVote, false);
+  });
+
+  it("should be able to vote in a post if account hasn't voted before", async () => {
+    const userCanVote = await DReddit.methods.canVote(postId).call();
+    assert.equal(userCanVote, true);
+  });
 });
