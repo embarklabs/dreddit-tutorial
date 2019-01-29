@@ -40,4 +40,10 @@ contract('DReddit', () => {
     const userCanVote = await DReddit.methods.canVote(postId).call();
     assert.equal(userCanVote, true);
   });
+
+  it('should be able to vote in a post', async () => {
+    const receipt = await DReddit.methods.vote(postId, 1).send();
+    const Vote = receipt.events.NewVote;
+    assert.equal(Vote.returnValues.owner, accounts[0]);
+  });
 });
