@@ -46,4 +46,13 @@ contract('DReddit', () => {
     const Vote = receipt.events.NewVote;
     assert.equal(Vote.returnValues.owner, accounts[0]);
   });
+
+  it('shouldn\'t be able to vote twice', async () => {
+    try {
+      const receipt = await DReddit.methods.vote(postId, 1).send();
+      assert.fail('should have reverted before');
+    } catch (error){
+      assert(error.message.search('revert') > -1, 'Revert should happen');
+    }
+  });
 });
