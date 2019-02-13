@@ -8,5 +8,9 @@
   "author": "",
   "license": "ISC",
   "homepage": "",
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
 }
