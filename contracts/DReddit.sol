@@ -69,5 +69,9 @@ contract DReddit {
     Post storage post = posts[_postId];
     return uint8(post.voters[msg.sender]);
   }
+
+  function numPosts() public view returns (uint) {
+    return posts.length;
+  }
 }
 

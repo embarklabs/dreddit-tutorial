@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { CreatePost } from './CreatePost';
+import { List } from './List';
 
 export class App extends Component {
 
@@ -8,6 +9,7 @@ export class App extends Component {
       <React.Fragment>
         <h1>DReddit</h1>
         <CreatePost />
+        <List />
       </React.Fragment>
     )
   }
