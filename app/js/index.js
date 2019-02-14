@@ -7,5 +7,7 @@ import { App } from './components/App';
 // e.g if you have a contract named SimpleStorage:
 //import SimpleStorage from 'Embark/contracts/SimpleStorage';
 
-render(<App />, document.getElementById('root'));
+EmbarkJS.onReady(() => {
+  render(<App />, document.getElementById('root'));
+});
 
