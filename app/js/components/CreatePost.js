@@ -37,6 +37,7 @@ export class CreatePost extends Component {
     const estimate = await createPost.estimateGas();
     
     await createPost.send({from: accounts[0], gas: estimate});
+    await this.props.afterPostHandler();
 
     this.setState({
       topic: '',
