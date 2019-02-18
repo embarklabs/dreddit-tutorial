@@ -8,8 +8,11 @@ export class List extends Component {
       {this.props.posts.map(post => {
         return (<Post 
           key={post.id}
+          id={post.id}
           description={post.description}
           creationDate={post.creationDate}
+          upvotes={post.upvotes}
+          downvotes={post.downvotes}
           owner={post.owner}
           />)
       })}

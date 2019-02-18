@@ -29,10 +29,10 @@ export class App extends Component {
     list = await Promise.all(list);
     list = list.map((post, index) => {
       post.id = index;
+      post.upvotes = parseInt(post.upvotes, 10);
+      post.downvotes = parseInt(post.downvotes, 10);
       return post;
     });
-
-    list;
 
     this.setState({ posts: list });
   }
