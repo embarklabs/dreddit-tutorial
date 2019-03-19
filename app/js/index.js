@@ -10,4 +10,3 @@ import { App } from './components/App';
 EmbarkJS.onReady(() => {
   render(<App />, document.getElementById('root'));
 });
-

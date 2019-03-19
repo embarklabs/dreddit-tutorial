@@ -74,4 +74,3 @@ contract DReddit {
     return posts.length;
   }
 }
-
