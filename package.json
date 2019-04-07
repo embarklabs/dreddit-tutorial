@@ -11,6 +11,7 @@
   "devDependencies": {},
   "dependencies": {
     "dateformat": "^3.0.3",
+    "embarkjs-connector-web3": "^4.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   }
